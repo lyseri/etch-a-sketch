@@ -1,3 +1,13 @@
+// Returns random color code
+function getColorCode() {
+    let makeColorCode = '0123456789ABCDEF';
+    let code = '#';
+    for (let count = 0; count < 6; count++) {
+       code = code + makeColorCode[Math.floor(Math.random() * 16)];
+    }
+    return code;
+}
+
 const container = document.querySelector('#container-a');
 
 // Checks for larger height or width and changes container id accordingly
@@ -17,5 +27,15 @@ for (let i = 0; i < 16; i++) {
     for (let i = 0; i < 16; i++) {
         const gridSquare = document.createElement('div');
         gridRow.appendChild(gridSquare);
+        gridSquare.classList.add('cell');
     }
 }
+
+// Change divs color when mouse hovers
+const cells = document.querySelectorAll('.cell');
+
+cells.forEach((cell) => {
+    cell.addEventListener('mouseover', () => {
+        cell.style.backgroundColor = getColorCode();
+    });
+});
