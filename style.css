@@ -1,0 +1,24 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    display: flex;
+    flex-flow: column;
+}
+
+.row {
+    display: flex;
+}
+div > div > div {
+    flex: 3vh;
+    width: 2vh;
+    height: 2vh;
+    background-color: white;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+}
