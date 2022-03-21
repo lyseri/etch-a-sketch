@@ -1,3 +1,12 @@
+// Checks for larger height or width and changes container id accordingly
+function windowSizeChecker() {
+    if (window.innerHeight < window.innerWidth) {
+        container.id = 'container-b';
+    } else if (window.innerHeight > window.innerWidth) {
+        container.id = 'container-a';
+    }
+}
+
 // Returns random color code
 function getColorCode() {
     let makeColorCode = '0123456789ABCDEF';
@@ -9,14 +18,10 @@ function getColorCode() {
 }
 
 const container = document.querySelector('#container-a');
+windowSizeChecker();
 
-// Checks for larger height or width and changes container id accordingly
 window.addEventListener('resize', () => {
-    if (window.innerHeight < window.innerWidth) {
-        container.id = 'container-b';
-    } else if (window.innerHeight > window.innerWidth) {
-        container.id = 'container-a';
-    }
+    windowSizeChecker();
 });
 
 // Generates 16x16 grid within #container
@@ -37,5 +42,14 @@ const cells = document.querySelectorAll('.cell');
 cells.forEach((cell) => {
     cell.addEventListener('mouseover', () => {
         cell.style.backgroundColor = getColorCode();
+    });
+});
+
+// Sets cells to white
+const clear = document.querySelector('#clear-button')
+
+clear.addEventListener('click', () => {
+    cells.forEach((cell) => {
+        cell.style.backgroundColor = 'white';
     });
 });

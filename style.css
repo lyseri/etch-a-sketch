@@ -1,8 +1,10 @@
 body {
     height: 100vh;
     display: flex;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
+    gap: 3em;
 }
 
 #container-a {
@@ -10,6 +12,9 @@ body {
     flex-flow: column;
     height: 90vw;
     width: 90vw;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
 }
 
 #container-b {
@@ -17,6 +22,9 @@ body {
     flex-flow: column;
     height: 90vh;
     width: 90vh;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
 }
 
 .row {
