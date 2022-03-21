@@ -2,8 +2,10 @@
 function windowSizeChecker() {
     if (window.innerHeight < window.innerWidth) {
         container.id = 'container-b';
+        btnContainer.id = 'button-container-b';
     } else if (window.innerHeight > window.innerWidth) {
         container.id = 'container-a';
+        btnContainer.id = 'button-container-a';
     }
 }
 
@@ -44,6 +46,7 @@ function initalize() {
 }
 
 const container = document.querySelector('#container-a');
+const btnContainer = document.querySelector('#button-container-a');
 const clear = document.querySelector('#clear-button');
 windowSizeChecker();
 
@@ -76,7 +79,7 @@ gridChange.addEventListener('click', () => {
     rows.forEach((row) => {
         row.remove();
     })
-    gridSize = prompt('What would you like the grid length and height to be? (Max:100)');
+    gridSize = prompt('How many cells would you like the length and height to be? (Max:100)');
     if (gridSize <= 100) {
         for (let i = 0; i < gridSize; i++) {
             const gridRow = document.createElement('div');
