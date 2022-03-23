@@ -9,9 +9,20 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
-    <div id="button-container-a">
-        <button id="clear-button">CLEAR</button>
-        <button id="grid-button">Change GRID</button>
+    <div id="main-gui">
+        <div id="button-container">
+            <button id="clear-button">CLEAR</button>
+            <button id="grid-button">CHANGE GRID SIZE</button>
+        </div>
+        <div>
+            <p>Style:</p>
+            <input type="radio" name="input" id="black" value="black">
+            <label for="hover">Black</label><br>
+            <input type="radio" name="input" id="random" value="random">
+            <label for="click">Random</label><br>    
+            <input type="radio" name="input" id="rainbow" value="rainbow">
+            <label for="click">Rainbow</label><br>    
+        </div>
     </div>
     <div id="container-a">
     </div>

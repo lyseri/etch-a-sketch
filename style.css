@@ -7,24 +7,36 @@ body {
     gap: 3em;
 }
 
-#button-container-a {
+#main-gui {
+    border: solid 3px;
+    border-radius: 1em;
+    padding: 20px 32px;
     display: flex;
-    gap: 60vw;
+    align-self: center;
+    gap: 3em;
 }
 
-#button-container-b {
+#button-container {
     display: flex;
-    gap: 60vh;
+    flex-flow: column;
+    gap: 1em;
 }
 
 button {
     background-color: white;
-    border: solid;
+    border: solid 2px;
+    border-radius: .25em;
     color: black;
     padding: 15px 32px;
     text-align: center;
     font-style: italic;
     font-size: 16px;
+    transition-duration: 0.4;
+}
+
+button:hover {
+    border-color:rgb(138, 138, 138);
+    color: rgb(87, 87, 87);
 }
 
 #container-a {
@@ -32,7 +44,7 @@ button {
     flex-flow: column;
     height: 90vw;
     width: 90vw;
-    border: 4px solid black;
+    border: 3px solid black;
     border-radius: 5px;
 }
 
@@ -41,7 +53,7 @@ button {
     flex-flow: column;
     height: 90vh;
     width: 90vh;
-    border: 4px solid black;
+    border: 3px solid black;
     border-radius: 5px;
 }
 
@@ -49,6 +61,7 @@ button {
     display: flex;
     flex: 1;
 }
+
 div > div > div {   
     flex: 1;
     background-color: white;

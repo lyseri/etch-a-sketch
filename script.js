@@ -2,10 +2,8 @@
 function windowSizeChecker() {
     if (window.innerHeight < window.innerWidth) {
         container.id = 'container-b';
-        btnContainer.id = 'button-container-b';
     } else if (window.innerHeight > window.innerWidth) {
         container.id = 'container-a';
-        btnContainer.id = 'button-container-a';
     }
 }
 
@@ -19,9 +17,12 @@ function getColorCode() {
     return code;
 }
 
-// Adds event for when divs color when mouse hovers for current cells
-function eventHover() {
+// Add event for divs color when mouse clicks current cells 
+function eventDraw() {
     cells.forEach((cell) => {
+        cell.addEventListener('click', () => {
+            cell.style.backgroundColor = getColorCode();
+        });
         cell.addEventListener('mouseover', () => {
             cell.style.backgroundColor = getColorCode();
         });
@@ -41,13 +42,12 @@ function eventClear() {
 function initalize() {
     cells = document.querySelectorAll('.cell');
     rows = document.querySelectorAll('.row');
-    eventHover();
-    eventClear();    
+    eventClear(); 
 }
 
 const container = document.querySelector('#container-a');
-const btnContainer = document.querySelector('#button-container-a');
 const clear = document.querySelector('#clear-button');
+
 windowSizeChecker();
 
 window.addEventListener('resize', () => {
@@ -67,6 +67,7 @@ for (let i = 0; i < 16; i++) {
 }
 
 initalize();
+eventDraw();
 
 // Change gridSize
 const gridChange = document.querySelector('#grid-button');
