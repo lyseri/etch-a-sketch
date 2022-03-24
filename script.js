@@ -43,6 +43,7 @@ function initalize() {
     cells = document.querySelectorAll('.cell');
     rows = document.querySelectorAll('.row');
     eventClear(); 
+    eventDraw();
 }
 
 const container = document.querySelector('#container-a');
@@ -67,7 +68,6 @@ for (let i = 0; i < 16; i++) {
 }
 
 initalize();
-eventDraw();
 
 // Change gridSize
 const gridChange = document.querySelector('#grid-button');
